@@ -15,5 +15,8 @@ steps:
 
 - task: WhiteSource@20
   inputs:
-    cwd: '$(System.DefaultWorkingDirectory)'
     projectName: 'GithubGoVgoSanity'
+    configuration: |
+      dependenciesOnly = true
+      go.collectDependenciesAtRuntime = true
+      go.dependencyManager = vgo
